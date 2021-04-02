@@ -3,6 +3,7 @@
   import ToggleTheme from '$lib/ToggleTheme.svelte';
   import Counter from '$lib/Counter.svelte';
   import Timer from '$lib/Timer.svelte';
+  import Card from '$lib/Card.svelte'
 </script>
 
 <svelte:head>
@@ -42,6 +43,7 @@
 
 <Counter />
 <Timer />
+<Card />
 
 <style lang="postcss">
   p {
