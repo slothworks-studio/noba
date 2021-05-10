@@ -48,6 +48,8 @@
   },
   "type": "module",
   "dependencies": {
-    "matter-js": "^0.17.1"
+    "matter-attractors": "^0.1.6",
+    "matter-js": "^0.17.1",
+    "planck": "^1.0.0-alpha.2"
   }
 }

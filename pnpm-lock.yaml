@@ -10,6 +10,7 @@ specifiers:
   '@sveltejs/kit': next
   '@tailwindcss/jit': ^0.1.18
   '@types/jest': ^26.0.23
+  '@types/matter-js': ^0.14.12
   '@typescript-eslint/eslint-plugin': ^4.19.0
   '@typescript-eslint/parser': ^4.19.0
   autoprefixer: ^10.2.5
@@ -18,6 +19,9 @@ specifiers:
   eslint-config-prettier: ^8.1.0
   eslint-plugin-svelte3: ^3.2.0
   jest: ^26.6.3
+  matter-attractors: ^0.1.6
+  matter-js: ^0.17.1
+  planck: ^1.0.0-alpha.2
   postcss: ^8.2.13
   postcss-load-config: ^3.0.1
   postcss-preset-env: ^6.7.0
@@ -33,6 +37,11 @@ specifiers:
   typescript: ^4.2.4
   vite: ^2.2.3
 
+dependencies:
+  matter-attractors: 0.1.6
+  matter-js: 0.17.1
+  planck: 1.0.0-alpha.2
+
 devDependencies:
   '@babel/core': 7.14.0
   '@storybook/addon-actions': 6.2.9
@@ -40,9 +49,10 @@ devDependencies:
   '@storybook/addon-links': 6.2.9
   '@storybook/addon-svelte-csf': 1.0.0_0eee2690d0b9fca13438863cd6b7ff68
   '@storybook/svelte': 6.2.9_dc1e06f9419f64fd13105a53b8a07d9a
-  '@sveltejs/kit': 1.0.0-next.99_svelte@3.38.2+vite@2.2.4
+  '@sveltejs/kit': 1.0.0-next.103_svelte@3.38.2
   '@tailwindcss/jit': 0.1.18_postcss@8.2.13+tailwindcss@2.1.2
   '@types/jest': 26.0.23
+  '@types/matter-js': 0.14.12
   '@typescript-eslint/eslint-plugin': 4.22.1_f2cf9a191be19a59b06aad4f4e4a9af1
   '@typescript-eslint/parser': 4.22.1_eslint@7.25.0+typescript@4.2.4
   autoprefixer: 10.2.5_postcss@8.2.13
@@ -3333,13 +3343,12 @@ packages:
       - '@types/react'
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.99_svelte@3.38.2+vite@2.2.4:
-    resolution: {integrity: sha512-eLVo8/fE6DrNFRCx4fLU2MKolVhMPHlBkhA04kpsNaojC6PW9kW9w7DEpeK5WCYYzxhirvmABsUyw37pQfjZVA==}
+  /@sveltejs/kit/1.0.0-next.103_svelte@3.38.2:
+    resolution: {integrity: sha512-g3Q3AnYloJVpXu83yfQLddYcsTYJ5M/NaoRTyv0qCTMNea1L9HTGrI8grdi5kF8wbPCUcX9fLA9RYRDfEkjF/Q==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
     peerDependencies:
-      svelte: ^3.34.0
-      vite: ^2.2.3
+      svelte: ^3.38.2
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.9_svelte@3.38.2+vite@2.2.4
       cheap-watch: 1.0.3
@@ -3501,6 +3510,10 @@ packages:
     resolution: {integrity: sha512-30nFYpceM/ZEvhGiqWjm5quLUxNeld0HCzJEXMZZDpq53FPkS85mTwkWtCXzCqq8s5JYLgM5W392a02xn8Bdaw==}
     dependencies:
       '@types/react': 17.0.5
+    dev: true
+
+  /@types/matter-js/0.14.12:
+    resolution: {integrity: sha512-n3+rv3E4tIW/UOCpi4Dh/4q9kgkk3k/tC4pV/GvsX2DcZ+iuEOAPPsJPyMidHOVaspChBu+FKQoWrbyJ8JPRcQ==}
     dev: true
 
   /@types/mdast/3.0.3:
@@ -8859,6 +8872,14 @@ packages:
       react: 16.14.0
     dev: true
 
+  /matter-attractors/0.1.6:
+    resolution: {integrity: sha1-+HuhMvts8eWPJnxtj/xZB2hoOYk=}
+    dev: false
+
+  /matter-js/0.17.1:
+    resolution: {integrity: sha512-pSquoENJgvSAlQGcA0s5UkmEohGXZaUww2g3B6qG87x0iEcVf+aigMXn5UkFPdnh6w3B+C4vXSLaYqhHwKrOLA==}
+    dev: false
+
   /md5.js/1.3.5:
     resolution: {integrity: sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg==}
     dependencies:
@@ -9803,6 +9824,12 @@ packages:
     dependencies:
       find-up: 3.0.0
     dev: true
+
+  /planck/1.0.0-alpha.2:
+    resolution: {integrity: sha512-rJegXAJEEsYwNyxHMJjtq5OPAU4SZm8eZ5eYhiM6J7B0O1IzLFFTnRxKfaecyVcpkJqW/u2s2va4bnJ64jK89w==}
+    dependencies:
+      stage-js: 0.9.4
+    dev: false
 
   /pnp-webpack-plugin/1.6.4_typescript@4.2.4:
     resolution: {integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==}
@@ -11622,6 +11649,10 @@ packages:
     dependencies:
       escape-string-regexp: 2.0.0
     dev: true
+
+  /stage-js/0.9.4:
+    resolution: {integrity: sha512-fNN6rkYD55T4NUxJE71hixXYS9DoyHVX5S8sQcq5yiozX1kqHP/wnByZwFfdAGNZjb5rROJ90zwb0EbM9U2Jqg==}
+    dev: false
 
   /state-toggle/1.0.3:
     resolution: {integrity: sha512-d/5Z4/2iiCnHw6Xzghyhb+GcmF89bxwgXG60wjIiZaxnymbyOmI8Hk4VqHXiVVp6u2ysaskFfXg3ekCj4WNftQ==}

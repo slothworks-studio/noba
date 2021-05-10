@@ -17,11 +17,8 @@ module.exports = {
     },
   },
   darkMode: 'class',
-  theme: {
-    colors: {
-      red: '#cc1b21',
-    },
-  },
+  theme: defaultTheme,
+
   variants: {
     extend: {},
   },
