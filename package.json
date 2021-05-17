@@ -2,7 +2,7 @@
   "name": "noba",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
+    "dev": "svelte-kit dev --host",
     "test": "jest",
     "test:watch": "npm test -- --watch",
     "build": "svelte-kit build",

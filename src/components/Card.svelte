@@ -1,16 +1,29 @@
 <script lang="ts">
   export let text1 = 'hi';
   export let text2 = 'hello';
+
 </script>
 
-<div />
+<!-- <div id="container" /> -->
 
-<div id="container" />
-
-<div class="p-6 max-w-sm mx-auto bg-grey rounded-xl shadow-md flex items-center space-x-4">
-  <div class="flex-shrink-0" />
-  <div>
-    <div>{text1}</div>
-    <div class="text-red-500">{text2}</div>
-  </div>
+<div class="cardContainer font-mono text-5xl">
+  <div class="text1">{text1}</div>
+  <div class="text2">{text2}</div>
 </div>
+
+<style>
+  .text1 {
+    color: black;
+    color: text-red-500;
+  }
+  .text2 {
+    color: #cc1b21;
+  }
+
+  .cardContainer {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+  }
+
+</style>

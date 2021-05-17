@@ -1,4 +1,4 @@
-import { writable, Writable } from 'svelte/store';
+import { writable } from 'svelte/store';
 import * as cards from '../data/deck.json';
 
 function init() {
