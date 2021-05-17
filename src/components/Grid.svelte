@@ -1,12 +1,30 @@
 <script lang="ts">
-  import { DeckStore } from '../stores/deckStore';
-
-  import * as Matter from 'matter-js';
-  import { Body, Bodies, Composite, Constraint, Events } from 'matter-js';
-  import * as MatterAttractors from 'matter-attractors';
   import { onMount, createEventDispatcher } from 'svelte';
-  import { Mouse } from 'matter-js';
-
+  import pkg from 'matter-js';
+  const {
+    Render,
+    Runner,
+    Bodies,
+    World,
+    Engine,
+    Composite,
+    Constraint,
+    Mouse,
+    MouseConstraint,
+    Events,
+  } = pkg;
+  // import {
+  //   Render,
+  //   Runner,
+  //   Bodies,
+  //   World,
+  //   Engine,
+  //   Composite,
+  //   Constraint,
+  //   Mouse,
+  //   MouseConstraint,
+  //   Events,
+  // } from 'matter-js';
   export let id = 'grid';
   let cardCount = 50;
   export let worldWidth = 1000;
@@ -17,13 +35,12 @@
 
   onMount(async () => {
     //Setup
-    Matter.use(MatterAttractors);
-    let engine = Matter.Engine.create(document.getElementById(id));
+    let engine = Engine.create(document.getElementById(id));
     engine.gravity.y = 0;
     engine.gravity.x = 0;
     engine.gravity.scale = 0.0000001;
 
-    let render = Matter.Render.create({
+    let render = Render.create({
       canvas: document.getElementById(id),
       // element: document.getElementById(id),
       engine: engine,
@@ -35,15 +52,15 @@
       },
     });
 
-    Matter.Render.run(render);
+    Render.run(render);
 
-    let runner = Matter.Runner.create();
-    Matter.Runner.run(runner, engine);
+    let runner = Runner.create();
+    Runner.run(runner, engine);
 
     // Generate boundaries
 
     function wall(x, y, width, height) {
-      return Matter.Bodies.rectangle(x, y, width, height, {
+      return Bodies.rectangle(x, y, width, height, {
         isStatic: true,
         render: {
           fillStyle: 'grey',
@@ -54,7 +71,7 @@
     }
 
     //Added extra padding to the outside to help with fast moving objects and collision detection
-    Matter.World.add(engine.world, [
+    World.add(engine.world, [
       wall(worldWidth / 2, -500, worldWidth + 100, 1000),
       wall(worldWidth / 2, worldHeight + 500, worldWidth + 100, 1000),
       wall(-500, worldHeight / 2, 1000, worldHeight + 100),
@@ -62,7 +79,7 @@
     ]);
 
     function createCard(x: number, y: number, width: number, height: number, label: string) {
-      let card = Matter.Bodies.rectangle(x, y, width, height, {
+      let card = Bodies.rectangle(x, y, width, height, {
         label: label,
         friction: 0.1,
         frictionAir: 0.05,
@@ -118,8 +135,8 @@
     createGrid();
     // createCard(50, 50, 20, 30, 'card');
     // interactions
-    var mouse = Matter.Mouse.create(render.canvas),
-      mouseConstraint = Matter.MouseConstraint.create(engine, {
+    var mouse = Mouse.create(render.canvas),
+      mouseConstraint = MouseConstraint.create(engine, {
         mouse: mouse,
         constraint: {
           stiffness: 0.2,
@@ -144,7 +161,7 @@
       dispatch('gridUp');
     });
 
-    Matter.Composite.add(engine.world, mouseConstraint);
+    Composite.add(engine.world, mouseConstraint);
   });
 
 </script>
