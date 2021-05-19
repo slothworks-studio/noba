@@ -181,7 +181,9 @@
       });
       Composite.add(engine.world, dragBody);
     });
-
+    Events.on(mouseConstraint, 'collisionStart', (e) => {
+      window.navigator.vibrate(100);
+    });
     // Dispatch Svelte Event - Remove drag body
     Events.on(mouseConstraint, 'mouseup', (e) => {
       Composite.remove(engine.world, dragBody);

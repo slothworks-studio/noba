@@ -8,8 +8,8 @@
   let availWidth = 1;
   let availHeight = 1;
   beforeUpdate(() => {
-    availWidth = window.innerWidth - 5;
-    availHeight = window.innerHeight - 5;
+    availWidth = window.innerWidth;
+    availHeight = window.innerHeight;
   });
 
   function toggle() {
