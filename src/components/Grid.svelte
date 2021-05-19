@@ -139,7 +139,6 @@
         var pair = pairs[i];
         pair.bodyA.render.fillStyle = 'red';
         pair.bodyB.render.fillStyle = 'red';
-        window.navigator.vibrate(100);
       }
     });
 
@@ -181,9 +180,15 @@
       });
       Composite.add(engine.world, dragBody);
     });
-    Events.on(mouseConstraint, 'collisionStart', (e) => {
-      window.navigator.vibrate(100);
+
+    Events.on(engine, 'collisionStart', (e) => {
+      let chance = Math.random();
+      if (chance < 0.2) {
+        console.log('vib');
+        window.navigator.vibrate(100);
+      }
     });
+
     // Dispatch Svelte Event - Remove drag body
     Events.on(mouseConstraint, 'mouseup', (e) => {
       Composite.remove(engine.world, dragBody);
