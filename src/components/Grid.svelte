@@ -132,6 +132,28 @@
       }
     }
 
+    Events.on(engine, 'collisionStart', (event) => {
+      let pairs = event.pairs;
+
+      for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i];
+        pair.bodyA.render.fillStyle = 'red';
+        pair.bodyB.render.fillStyle = 'red';
+        window.navigator.vibrate(100);
+      }
+    });
+
+    Events.on(engine, 'collisionEnd', (event) => {
+      let pairs = event.pairs;
+
+      for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i];
+        pair.bodyA.render.fillStyle = 'white';
+
+        pair.bodyB.render.fillStyle = 'white';
+      }
+    });
+
     createGrid();
     // createCard(50, 50, 20, 30, 'card');
     // interactions
@@ -146,7 +168,10 @@
         },
       });
 
+    // Create an invisible body to provide collisions while dragging
+
     let dragBody: Body;
+
     Events.on(mouseConstraint, 'mousedown', (e) => {
       dragBody = Bodies.circle(e.source.mouse.position.x, e.source.mouse.position.y, 40, {
         label: 'drag',
@@ -156,6 +181,8 @@
       });
       Composite.add(engine.world, dragBody);
     });
+
+    // Dispatch Svelte Event - Remove drag body
     Events.on(mouseConstraint, 'mouseup', (e) => {
       Composite.remove(engine.world, dragBody);
       dispatch('gridUp');
