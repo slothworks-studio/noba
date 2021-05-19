@@ -8,8 +8,8 @@
   let availWidth = 1;
   let availHeight = 1;
   beforeUpdate(() => {
-    availWidth = window.innerWidth;
-    availHeight = window.innerHeight;
+    availWidth = window.innerWidth - 5;
+    availHeight = window.innerHeight - 5;
   });
 
   function toggle() {
@@ -21,31 +21,48 @@
 
 </script>
 
-<div transition:fade={{ duration: 7000 }} class="container" style="height: {availHeight}px">
-  {#if mode === 'grid'}
+<div class="container" style="height: {availHeight}px">
+  <!-- {#if mode === 'grid'}
     <div class="item" transition:fade={{ duration: 1000 }}>
       <Grid on:gridUp={toggle} worldHeight={availHeight} worldWidth={availWidth} />
     </div>
   {/if}}
 
   {#if mode === 'card'}
-    <div class="item z-30" transition:fade={{ delay: 0, duration: 1000 }}>
-      <Card on:mouseup={toggle} />
+    <div class="item z-30" transition:fade={{ delay: 0, duration: 10000 }}>
+      <Card />
     </div>
-  {/if}
+  {/if} -->
+
+  <div class="grid z-10" transition:fade={{ duration: 1000 }}>
+    <Grid on:gridUp={toggle} worldHeight={availHeight} worldWidth={availWidth} />
+  </div>
+
+  <div class="card z-20" transition:fade={{ delay: 0, duration: 1000 }}>
+    <Card />
+  </div>
 </div>
 
 <style>
   .container {
-    background-color: black;
+    background-color: white;
     width: 100%;
     height: 100%;
     display: grid;
   }
 
-  .item {
+  .grid {
+    /* visibility: hidden;  */
     grid-column: 1;
     grid-row: 1;
+    /* opacity: 0.1; */
+  }
+
+  .card {
+    display: none;
+    grid-column: 1;
+    grid-row: 1;
+    /* opacity: 0.1; */
   }
 
 </style>
