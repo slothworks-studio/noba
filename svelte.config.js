@@ -13,6 +13,7 @@ const config = {
     files: {
       serviceWorker: 'serviceWorker.js',
       template: 'src/app.html',
+      assets: 'static',
     },
   },
 };
