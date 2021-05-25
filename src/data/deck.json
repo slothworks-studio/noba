@@ -1,154 +1,762 @@
 {
-	"cards": [
-		{
-			"text": ["ask for help . "]
-		},
-		{
-			"text": ["change the font . "]
-		},
-		{
-			"text": ["do a headstand . "]
-		},
-		{
-			"text": ["do it quickly . "]
-		},
-		{
-			"text": ["do the complete opposite . "]
-		},
-		{
-			"text": ["downward dog . "]
-		},
-		{
-			"text": ["draw it . ", "with stick figures . "]
-		},
-		{
-			"text": [" drink water . "]
-		},
-		{
-			"text": ["erase the whiteboard . "]
-		},
-		{
-			"text": ["flip it upside down . "]
-		},
-		{
-			"text": ["go take a nap . "]
-		},
-		{
-			"text": ["how would you have done it twelve years ago . "]
-		},
-		{
-			"text": ["ignore your instincts . "]
-		},
-		{
-			"text": ["imagine it in black & white . "]
-		},
-		{
-			"text": [" inhala, exhala . "]
-		},
-		{
-			"text": ["let it rest and move on ."]
-		},
-		{
-			"text": ["listen to your gut . "]
-		},
-		{
-			"text": ["look back . "]
-		},
-		{
-			"text": ["look up . "]
-		},
-		{
-			"text": ["move the words around . "]
-		},
-		{
-			"text": ["move to another space . "]
-		},
-		{
-			"text": ["move to the next step . "]
-		},
-		{
-			"text": ["open the closest book . ", "start reading . "]
-		},
-		{
-			"text": ["pencils down . "]
-		},
-		{
-			"text": ["pet a dog ."]
-		},
-		{
-			"text": ["play some music . "]
-		},
-		{
-			"text": ["remember remember remember . "]
-		},
-		{
-			"text": ["run . ", "now, go . "]
-		},
-		{
-			"text": ["shhhhhhh !", "no seriously, shut the fuck up . "]
-		},
-		{
-			"text": ["say it backwards . "]
-		},
-		{
-			"text": ["say it four times . "]
-		},
-		{
-			"text": ["say it really loud . ", "louder . "]
-		},
-		{
-			"text": ["scrap it and start over . "]
-		},
-		{
-			"text": ["shake it off . "]
-		},
-		{
-			"text": ["sing something for christ sake ."]
-		},
-		{
-			"text": ["start from the beginning . "]
-		},
-		{
-			"text": ["start from the end . "]
-		},
-		{
-			"text": ["stretch . "]
-		},
-		{
-			"text": ["take a break . ", "cook something . "]
-		},
-		{
-			"text": ["take a drive . ", "to nowhere in particular ."]
-		},
-		{
-			"text": ["tell it to someone you don't know ."]
-		},
-		{
-			"text": ["think about it differently . ", "use common sense . "]
-		},
-		{
-			"text": ["translate it into another language . "]
-		},
-		{
-			"text": ["turn everything off . "]
-		},
-		{
-			"text": ["type it up . ", "then hit delete . "]
-		},
-		{
-			"text": ["watch something mind numbing . "]
-		},
-		{
-			"text": ["what change . "]
-		},
-		{
-			"text": ["what would vonnegut do . "]
-		},
-		{
-			"text": ["when is it for . "]
-		},
-		{
-			"text": ["who is it for . "]
-		}
-	]
+  "settings": {},
+  "cardNumber": 0,
+  "cards": [
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "ask for help"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "change the font"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "do a headstand"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "do it quickly"
+        },
+
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "do the complete opposite"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "downward dog"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "draw it . "
+        },
+        {
+          "line": 2,
+          "color": "#cc1b21",
+          "text": "with stick figures . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "drink water"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "erase the whiteboard"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "flip it upside down"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "go take a nap"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "how would you have done it"
+        },
+        {
+          "line": 2,
+          "color": "#cc1b21",
+          "text": "twelve years ago . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "ignore your instincts"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "imagine it in black & white"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "inhala, exhala"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "let it rest and move on"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "listent to your gut"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "look back"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "look up"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "move the words around"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "move to another space"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "move to the next step"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "open the closest book"
+        },
+        {
+          "line": 2,
+          "color": "#cc1b21",
+          "text": "start reading . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "pencils down"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "pet a dog"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "play some music"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "remember remember remember"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "run . now, go"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "shhhhhhh"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " ! "
+        },
+        {
+          "line": 2,
+          "color": "#cc1b21",
+          "text": "no seriously, shut the fuck up ."
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "say it backwards"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "say it four times"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "say it really loud . "
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": "louder . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "scrap it and start over"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "shake it off"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "sing something for christ sake"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "start from the beginning"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "start from the end"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "stretch"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "take a break"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": "cook something . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "take a drive . "
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": "to nowhere in particular . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "tell it to someone you don't know"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "think about it differently . "
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": "use common sense . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "translate it into another"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": "language . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "turn everything off"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "type it up . "
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": "then hit delete . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "watch something mind numbing"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "what change"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "would would vonnegut do"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "when is it for"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    },
+    {
+      "content": [
+        {
+          "line": 1,
+          "color": "white",
+          "text": "who is it for"
+        },
+        {
+          "line": 1,
+          "color": "#cc1b21",
+          "text": " . "
+        }
+      ],
+      "viewed": false
+    }
+  ]
 }

@@ -7,8 +7,8 @@
 <!-- <div id="container" /> -->
 
 <div class="cardContainer font-mono text-5xl">
-  <div class="text1">{text1}</div>
-  <div class="text2">{text2}</div>
+  <div>{@html text1}</div>
+  <div>{@html text2}</div>
 </div>
 
 <style>
