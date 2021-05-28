@@ -54,7 +54,16 @@
     window.localStorage.setItem('noba-deck', JSON.stringify(deck));
   }
   onMount(async () => {
-    getDeck();
+    // getDeck();
+    if (window.localStorage.getItem('noba-deck')) {
+      deck = await JSON.parse(window.localStorage.getItem('noba-deck') as Deck);
+      console.log('from local');
+    } else {
+      var d = await import('../../.svelte-kit/static/deck.json');
+      deck = JSON.parse(JSON.stringify(d));
+      shuffleDeck();
+      saveDeck();
+    }
   });
 
 </script>
