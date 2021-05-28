@@ -1,0 +1,8 @@
+{
+  "name": "noba",
+  "short_name": "noba",
+  "start_url": "app.html",
+  "background_color": "black",
+  "theme_color": "#cc1b21",
+  "orientation": "portrait-primary"
+}

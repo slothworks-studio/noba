@@ -27,17 +27,6 @@
   function shuffleDeck() {
     deck.cards.sort(() => Math.random() - 0.5);
   }
-  async function getDeck() {
-    if (window.localStorage.getItem('noba-deck')) {
-      deck = await JSON.parse(window.localStorage.getItem('noba-deck') as Deck);
-      console.log('from local');
-    } else {
-      var d = await import('../../.svelte-kit/static/deck.json');
-      deck = JSON.parse(JSON.stringify(d));
-      shuffleDeck();
-      saveDeck();
-    }
-  }
 
   function getCard() {
     deck.cards[deck.cardNumber].viewed = true;
@@ -56,10 +45,9 @@
   onMount(async () => {
     // getDeck();
     if (window.localStorage.getItem('noba-deck')) {
-      deck = await JSON.parse(window.localStorage.getItem('noba-deck') as Deck);
-      console.log('from local');
+      deck = await JSON.parse(window.localStorage.getItem('noba-deck'));
     } else {
-      var d = await import('../../.svelte-kit/static/deck.json');
+      var d = await import('../../static/deck.json');
       deck = JSON.parse(JSON.stringify(d));
       shuffleDeck();
       saveDeck();
