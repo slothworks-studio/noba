@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import * as cards from '../data/deck.json';
+import * as cards from '../../.svelte-kit/static/deck.json';
 
 let deck;
 
@@ -20,7 +20,7 @@ function init() {
 function getDeck() {
   deck = localStorage.getItem('noba-deck');
   if (deck === null) {
-    deck = import('../data/deck.json');
+    deck = import('../../.svelte-kit/static/deck.json');
   }
 }
 

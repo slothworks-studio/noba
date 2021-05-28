@@ -28,23 +28,24 @@
     deck.cards.sort(() => Math.random() - 0.5);
   }
   async function getDeck() {
-    return await import('../data/deck.json');
+    if (window.localStorage.getItem('noba-deck')) {
+      deck = await JSON.parse(window.localStorage.getItem('noba-deck') as Deck);
+      console.log('from local');
+    } else {
+      var d = await import('../../.svelte-kit/static/deck.json');
+      deck = JSON.parse(JSON.stringify(d));
+      shuffleDeck();
+      saveDeck();
+    }
   }
 
   function getCard() {
-    console.log('getcard');
-    console.log(deck.cardNumber);
-    console.log(deck.cards[deck.cardNumber].content[0].text);
-    // card.text1 = deck.cards[deck.cardNumber].content[0].text;
-    // card.text2 = deck.cards[deck.cardNumber].content[1].text;
     deck.cards[deck.cardNumber].viewed = true;
-    // console.log('text 1:  ', card.text1);
-    // console.log('text 2:  ', card.text2);
     if (deck.cardNumber > deck.cards.length) {
       shuffleDeck();
       deck.cardNumber = 0;
     } else {
-      deck.cardNumber++;
+      deck.cardNumber = ++deck.cardNumber;
     }
     saveDeck();
   }
@@ -53,19 +54,7 @@
     window.localStorage.setItem('noba-deck', JSON.stringify(deck));
   }
   onMount(async () => {
-    // read from local storage
-    if (window.localStorage.getItem('noba-deck')) {
-      deck = await JSON.parse(window.localStorage.getItem('noba-deck') as Deck);
-      console.log('from local');
-    } else {
-      // Read from file
-      getDeck().then((d) => {
-        deck = d;
-        console.log(deck);
-        shuffleDeck();
-        saveDeck();
-      });
-    }
+    getDeck();
   });
 
 </script>
@@ -85,14 +74,6 @@
       />
     </div>
   {/if}
-
-  <!-- <div class="grid z-10" transition:fade={{ duration: 1000 }}>
-    <Grid on:gridUp={toggle} worldHeight={availHeight} worldWidth={availWidth} />
-  </div>
-
-  <div class="card z-20" transition:fade={{ delay: 0, duration: 1000 }}>
-    <Card />
-  </div> -->
 </div>
 
 <style>

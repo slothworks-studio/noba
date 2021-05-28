@@ -181,7 +181,7 @@
       Composite.add(engine.world, dragBody);
     });
 
-    Events.on(engine, 'collisionStart', (e) => {
+    Events.on(engine, 'collisionEnd', (e) => {
       let chance = Math.random();
       if (chance < 0.2) {
         console.log('vib');
