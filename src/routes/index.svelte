@@ -72,8 +72,6 @@
       shuffleDeck();
       saveDeck();
     }
-
-    // add shake event
   });
 </script>
 
