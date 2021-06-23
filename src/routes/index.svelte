@@ -72,10 +72,12 @@
       shuffleDeck();
       saveDeck();
     }
+
+    // add shake event
   });
 </script>
 
-<div class="container" style="height: {availHeight}px">
+<div class="main-container" style="height: {availHeight}px">
   {#if mode === 'grid'}
     <div class="item grid" transition:fade={{ duration: 1000 }}>
       <Grid on:gridUp={toggle} worldHeight={availHeight} worldWidth={availWidth} />
@@ -94,13 +96,14 @@
 </div>
 
 <style>
-  .container {
+  .main-container {
     background-color: white;
     width: 100%;
     height: 100%;
     display: grid;
     font-size: 2rem;
     @apply font-mono;
+    overflow: hidden;
   }
 
   .grid {

@@ -23,5 +23,11 @@
     height: 100%;
     width: 100%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    justify-items: center;
+    padding: 25px;
   }
 </style>
