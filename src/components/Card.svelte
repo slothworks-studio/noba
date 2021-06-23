@@ -5,7 +5,7 @@
 
 <!-- <div id="container" /> -->
 
-<div class="cardContainer font-mono text-5xl">
+<div class="cardContainer">
   <div>{@html text1}</div>
   <div>{@html text2}</div>
 </div>

@@ -128,7 +128,7 @@
         {
           "line": 1,
           "color": "black",
-          "text": "erase the blackboard"
+          "text": "erase the whiteboard"
         },
         {
           "line": 1,
@@ -586,7 +586,7 @@
           "text": "take a break"
         },
         {
-          "line": 1,
+          "line": 2,
           "color": "#cc1b21",
           "text": "cook something . "
         }
@@ -601,7 +601,7 @@
           "text": "take a drive . "
         },
         {
-          "line": 1,
+          "line": 2,
           "color": "#cc1b21",
           "text": "to nowhere in particular . "
         }
@@ -646,7 +646,7 @@
           "text": "translate it into another"
         },
         {
-          "line": 1,
+          "line": 2,
           "color": "#cc1b21",
           "text": "language . "
         }
@@ -676,7 +676,7 @@
           "text": "type it up . "
         },
         {
-          "line": 1,
+          "line": 2,
           "color": "#cc1b21",
           "text": "then hit delete . "
         }

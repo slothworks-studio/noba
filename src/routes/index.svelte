@@ -1,5 +1,6 @@
 <script lang="ts">
   import Grid from '../components/Grid.svelte';
+  import Splash from '../components/Splash.svelte';
   import Card from '../components/Card.svelte';
 
   import { beforeUpdate, onMount } from 'svelte';
@@ -98,6 +99,8 @@
     width: 100%;
     height: 100%;
     display: grid;
+    font-size: 2rem;
+    @apply font-mono;
   }
 
   .grid {
