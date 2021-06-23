@@ -6,7 +6,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "ask for help"
         },
         {
@@ -21,7 +21,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "change the font"
         },
         {
@@ -36,7 +36,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "do a headstand"
         },
         {
@@ -51,7 +51,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "do it quickly"
         },
 
@@ -67,7 +67,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "do the complete opposite"
         },
         {
@@ -82,7 +82,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "downward dog"
         },
         {
@@ -97,7 +97,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "draw it . "
         },
         {
@@ -112,7 +112,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "drink water"
         },
         {
@@ -127,8 +127,8 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
-          "text": "erase the whiteboard"
+          "color": "black",
+          "text": "erase the blackboard"
         },
         {
           "line": 1,
@@ -142,7 +142,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "flip it upside down"
         },
         {
@@ -157,7 +157,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "go take a nap"
         },
         {
@@ -172,7 +172,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "how would you have done it"
         },
         {
@@ -187,7 +187,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "ignore your instincts"
         },
         {
@@ -202,7 +202,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "imagine it in black & white"
         },
         {
@@ -217,7 +217,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "inhala, exhala"
         },
         {
@@ -232,7 +232,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "let it rest and move on"
         },
         {
@@ -247,7 +247,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "listent to your gut"
         },
         {
@@ -262,7 +262,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "look back"
         },
         {
@@ -277,7 +277,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "look up"
         },
         {
@@ -292,7 +292,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "move the words around"
         },
         {
@@ -307,7 +307,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "move to another space"
         },
         {
@@ -322,7 +322,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "move to the next step"
         },
         {
@@ -337,7 +337,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "open the closest book"
         },
         {
@@ -352,7 +352,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "pencils down"
         },
         {
@@ -367,7 +367,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "pet a dog"
         },
         {
@@ -382,7 +382,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "play some music"
         },
         {
@@ -397,7 +397,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "remember remember remember"
         },
         {
@@ -412,7 +412,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "run . now, go"
         },
         {
@@ -427,7 +427,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "shhhhhhh"
         },
         {
@@ -437,7 +437,7 @@
         },
         {
           "line": 2,
-          "color": "#cc1b21",
+          "color": "black",
           "text": "no seriously, shut the fuck up ."
         }
       ],
@@ -447,7 +447,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "say it backwards"
         },
         {
@@ -462,7 +462,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "say it four times"
         },
         {
@@ -477,11 +477,11 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "say it really loud . "
         },
         {
-          "line": 1,
+          "line": 2,
           "color": "#cc1b21",
           "text": "louder . "
         }
@@ -492,7 +492,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "scrap it and start over"
         },
         {
@@ -507,7 +507,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "shake it off"
         },
         {
@@ -522,7 +522,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "sing something for christ sake"
         },
         {
@@ -537,7 +537,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "start from the beginning"
         },
         {
@@ -552,7 +552,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "start from the end"
         },
         {
@@ -567,7 +567,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "stretch"
         },
         {
@@ -582,7 +582,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "take a break"
         },
         {
@@ -597,7 +597,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "take a drive . "
         },
         {
@@ -612,7 +612,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "tell it to someone you don't know"
         },
         {
@@ -627,7 +627,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "think about it differently . "
         },
         {
@@ -642,7 +642,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "translate it into another"
         },
         {
@@ -657,7 +657,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "turn everything off"
         },
         {
@@ -672,7 +672,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "type it up . "
         },
         {
@@ -687,7 +687,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "watch something mind numbing"
         },
         {
@@ -702,7 +702,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "what change"
         },
         {
@@ -717,7 +717,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "would would vonnegut do"
         },
         {
@@ -732,7 +732,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "when is it for"
         },
         {
@@ -747,7 +747,7 @@
       "content": [
         {
           "line": 1,
-          "color": "white",
+          "color": "black",
           "text": "who is it for"
         },
         {

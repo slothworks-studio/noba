@@ -1,7 +1,6 @@
 <script lang="ts">
-  export let text1 = 'hi';
-  export let text2 = 'hello';
-
+  export let text1 = '';
+  export let text2 = '';
 </script>
 
 <!-- <div id="container" /> -->
@@ -25,5 +24,4 @@
     width: 100%;
     background-color: white;
   }
-
 </style>

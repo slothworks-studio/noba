@@ -6,7 +6,10 @@
   import { fade } from 'svelte/transition';
   import type { Deck, Card as CardType } from 'src/data/types';
   let deck: Deck;
-  let card: CardType;
+  let card: CardType = {
+    text1: '',
+    text2: '',
+  };
 
   let mode: 'grid' | 'card' = 'grid';
   let availWidth = 1;
@@ -36,7 +39,23 @@
     } else {
       deck.cardNumber = ++deck.cardNumber;
     }
-    saveDeck();
+    buildCardHtml().then(() => {
+      saveDeck();
+    });
+  }
+
+  async function buildCardHtml() {
+    card.text1 = '';
+    card.text2 = '';
+
+    deck.cards[deck.cardNumber].content.forEach((item) => {
+      if (item.line === 1) {
+        card.text1 += `<span style="color: ${item.color}">${item.text}</span>`;
+      }
+      if (item.line === 2) {
+        card.text2 += `<span style="color: ${item.color}">${item.text}</span>`;
+      }
+    });
   }
 
   function saveDeck() {
@@ -53,7 +72,6 @@
       saveDeck();
     }
   });
-
 </script>
 
 <div class="container" style="height: {availHeight}px">
@@ -65,10 +83,11 @@
 
   {#if mode === 'card'}
     <div class="item z-30 grid" transition:fade={{ delay: 0, duration: 10000 }}>
-      <Card
+      <!-- <Card
         text1={deck.cards[deck.cardNumber].content[0].text}
         text2={deck.cards[deck.cardNumber].content[1].text}
-      />
+      /> -->
+      <Card text1={card.text1} text2={card.text2} />
     </div>
   {/if}
 </div>
@@ -94,5 +113,4 @@
     grid-row: 1;
     /* opacity: 0.1; */
   }
-
 </style>

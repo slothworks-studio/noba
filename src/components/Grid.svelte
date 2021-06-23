@@ -184,7 +184,6 @@
     Events.on(engine, 'collisionEnd', (e) => {
       let chance = Math.random();
       if (chance < 0.2) {
-        console.log('vib');
         window.navigator.vibrate(100);
       }
     });
@@ -197,7 +196,6 @@
 
     Composite.add(engine.world, mouseConstraint);
   });
-
 </script>
 
 <canvas {id} />
