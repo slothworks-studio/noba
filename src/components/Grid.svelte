@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, createEventDispatcher } from 'svelte';
   import pkg from 'matter-js';
+  import { debug } from 'svelte/internal';
   const {
     Render,
     Runner,
@@ -13,24 +14,15 @@
     MouseConstraint,
     Events,
   } = pkg;
-  // import {
-  //   Render,
-  //   Runner,
-  //   Bodies,
-  //   World,
-  //   Engine,
-  //   Composite,
-  //   Constraint,
-  //   Mouse,
-  //   MouseConstraint,
-  //   Events,
-  // } from 'matter-js';
+
   export let id = 'grid';
-  let cardCount = 50;
+  export let viewedCards = 0;
   export let worldWidth = 1000;
   export let worldHeight = 1000;
   export let columns = 25;
   export let rows = 25;
+
+  let colors = [];
   const dispatch = createEventDispatcher();
 
   onMount(async () => {
@@ -47,7 +39,7 @@
       options: {
         width: worldWidth,
         height: worldHeight,
-        background: 'black',
+        background: 'white',
         wireframes: false,
       },
     });
@@ -63,7 +55,7 @@
       return Bodies.rectangle(x, y, width, height, {
         isStatic: true,
         render: {
-          fillStyle: 'grey',
+          fillStyle: 'black',
         },
         density: 500000,
         restitution: 0.5,
@@ -78,7 +70,14 @@
       wall(worldWidth + 500, worldHeight / 2, 1000, worldHeight + 100),
     ]);
 
-    function createCard(x: number, y: number, width: number, height: number, label: string) {
+    function createCard(
+      x: number,
+      y: number,
+      width: number,
+      height: number,
+      label: string,
+      color: string,
+    ) {
       let card = Bodies.rectangle(x, y, width, height, {
         label: label,
         friction: 0.1,
@@ -86,7 +85,7 @@
         restitution: 0.05,
         render: {
           opacity: 1,
-          fillStyle: 'white',
+          fillStyle: color,
         },
       });
 
@@ -112,24 +111,54 @@
     }
 
     function createGrid() {
-      //worldwidth / columns = initial grid bucket width
-      //worldheight / rows = initial grid bucket heighth
+      console.log('create grid ');
+      console.log('viewed cards: ' + viewedCards);
+      setCardColors().then(() => {
+        // console.log(colors);
+        //worldwidth / columns = initial grid bucket width
+        //worldheight / rows = initial grid bucket heighth
 
-      const columnWidth = worldWidth / columns;
-      const rowHeight = worldHeight / rows;
+        const columnWidth = worldWidth / columns;
+        const rowHeight = worldHeight / rows;
 
-      const cardHeight = (rowHeight * 15) / 100;
-      const cardWidth = (columnWidth * 15) / 100;
+        const cardHeight = (rowHeight * 15) / 100;
+        const cardWidth = (columnWidth * 15) / 100;
 
-      //rows
-      for (let i = 0; i < rows; i++) {
-        //columns
-        for (let j = 0; j < columns; j++) {
-          let y = rowHeight / 2 + rowHeight * i;
-          let x = columnWidth / 2 + columnWidth * j;
-          createCard(x, y, cardWidth, cardHeight, 'row' + i + ';column' + j);
+        //rows
+        for (let i = 0; i < rows; i++) {
+          //columns
+          for (let j = 0; j < columns; j++) {
+            let y = rowHeight / 2 + rowHeight * i;
+            let x = columnWidth / 2 + columnWidth * j;
+
+            // calculate color
+
+            // decrement card counts
+
+            createCard(x, y, cardWidth, cardHeight, 'row' + i + ';column' + j, colors[i]);
+          }
         }
+      });
+    }
+
+    async function setCardColors() {
+      let totalCards = columns * rows;
+      console.log(totalCards);
+      console.log('viewed cards: ' + viewedCards);
+
+      // Initialize array
+      for (let i = 0; i < totalCards; i++) {
+        colors[i] = 'black';
       }
+
+      for (let i = 0; i < viewedCards; i++) {
+        let x = Math.floor(Math.random() * totalCards + 1);
+        console.log(x);
+        if (colors[x] != '#cc1b21') {
+          colors[x] = '#cc1b21';
+        } else i--; // run it again;
+      }
+      // console.log('colors: ' + colors);
     }
 
     Events.on(engine, 'collisionStart', (event) => {

@@ -1,23 +1,25 @@
 <script lang="ts">
-  import Grid from '../components/Grid.svelte';
-  import Splash from '../components/Splash.svelte';
-  import Card from '../components/Card.svelte';
-
+  import type { Card as CardType, Deck } from 'src/data/types';
   import { beforeUpdate, onMount } from 'svelte';
   import { fade } from 'svelte/transition';
-  import type { Deck, Card as CardType } from 'src/data/types';
+  import Card from '../components/Card.svelte';
+  import Grid from '../components/Grid.svelte';
+  import Splash from '../components/Splash.svelte';
   let deck: Deck;
   let card: CardType = {
     text1: '',
     text2: '',
   };
+  $: viewedCardCount = 0;
 
-  let mode: 'grid' | 'card' = 'grid';
+  let mode: 'grid' | 'card' | 'onboarding' = 'grid';
   let availWidth = 1;
   let availHeight = 1;
+
   beforeUpdate(() => {
     availWidth = window.innerWidth;
     availHeight = window.innerHeight;
+    // viewedCardCount = deck.cardNumber;
   });
 
   async function toggle() {
@@ -34,6 +36,7 @@
 
   function getCard() {
     deck.cards[deck.cardNumber].viewed = true;
+    // viewedCardCount = deck.cardNumber;
     if (deck.cardNumber > deck.cards.length) {
       shuffleDeck();
       deck.cardNumber = 0;
@@ -62,8 +65,8 @@
   function saveDeck() {
     window.localStorage.setItem('noba-deck', JSON.stringify(deck));
   }
+
   onMount(async () => {
-    // getDeck();
     if (window.localStorage.getItem('noba-deck')) {
       deck = await JSON.parse(window.localStorage.getItem('noba-deck'));
     } else {
@@ -72,13 +75,26 @@
       shuffleDeck();
       saveDeck();
     }
+    console.log(deck.cardNumber);
+    console.log('deck.cardNumber: ' + deck.cardNumber);
+    viewedCardCount = deck.cardNumber;
   });
 </script>
 
 <div class="main-container" style="height: {availHeight}px">
+  {#if mode === 'onboarding'}
+    <div class="grid" transition:fade={{ duration: 55000 }}>
+      <Splash />
+    </div>
+  {/if}
   {#if mode === 'grid'}
     <div class="item grid" transition:fade={{ duration: 1000 }}>
-      <Grid on:gridUp={toggle} worldHeight={availHeight} worldWidth={availWidth} />
+      <Grid
+        on:gridUp={toggle}
+        worldHeight={availHeight}
+        worldWidth={availWidth}
+        viewedCards={viewedCardCount}
+      />
     </div>
   {/if}
 
@@ -116,5 +132,10 @@
     grid-column: 1;
     grid-row: 1;
     /* opacity: 0.1; */
+  }
+
+  .splash {
+    grid-column: 1;
+    grid-row: 1;
   }
 </style>

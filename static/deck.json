@@ -1,5 +1,7 @@
 {
-  "settings": {},
+  "settings": {
+    "onboarded": false
+  },
   "cardNumber": 0,
   "cards": [
     {
@@ -248,7 +250,7 @@
         {
           "line": 1,
           "color": "black",
-          "text": "listent to your gut"
+          "text": "listen to your gut"
         },
         {
           "line": 1,
@@ -437,7 +439,7 @@
         },
         {
           "line": 2,
-          "color": "black",
+          "color": "#cc1b21",
           "text": "no seriously, shut the fuck up ."
         }
       ],
@@ -631,8 +633,8 @@
           "text": "think about it differently . "
         },
         {
-          "line": 1,
-          "color": "#cc1b21",
+          "line": 2,
+          "color": "black",
           "text": "use common sense . "
         }
       ],

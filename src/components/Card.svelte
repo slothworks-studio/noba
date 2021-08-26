@@ -5,7 +5,7 @@
 
 <!-- <div id="container" /> -->
 
-<div class="cardContainer">
+<div class="card-container">
   <div>{@html text1}</div>
   <div>{@html text2}</div>
 </div>
@@ -19,7 +19,7 @@
     color: #cc1b21;
   }
 
-  .cardContainer {
+  .card-container {
     height: 100%;
     width: 100%;
     background-color: white;
