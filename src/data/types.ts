@@ -4,7 +4,7 @@ export type Deck = {
    * cardNumber refers to the current card in the array. Can also be used
    * to tell the total cards viewed.
    */
-  cardNumber: number;
+  currentCard: number;
   cards: {
     content: {
       line: number;

@@ -2,7 +2,7 @@
   "settings": {
     "onboarded": false
   },
-  "cardNumber": 0,
+  "currentCard": 0,
   "cards": [
     {
       "content": [

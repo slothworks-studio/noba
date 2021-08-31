@@ -42,6 +42,7 @@
   },
   "type": "module",
   "dependencies": {
+    "immer": "^9.0.5",
     "matter-js": "^0.17.1",
     "planck": "^1.0.0-alpha.2"
   }

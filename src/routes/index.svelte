@@ -5,12 +5,13 @@
   import Card from '../components/Card.svelte';
   import Grid from '../components/Grid.svelte';
   import Splash from '../components/Splash.svelte';
-  let deck: Deck;
-  let card: CardType = {
-    text1: '',
-    text2: '',
-  };
-  $: viewedCardCount = 0;
+  import { DeckStore } from '../data/deckStore';
+  // let deck: Deck;
+  // let card: CardType = {
+  //   text1: '',
+  //   text2: '',
+  // };
+  // $: viewedCardCount = 0;
 
   let mode: 'grid' | 'card' | 'onboarding' = 'grid';
   let availWidth = 1;
@@ -22,63 +23,79 @@
     // viewedCardCount = deck.cardNumber;
   });
 
+  // async function toggle() {
+  //   await getCard();
+  //   mode === 'card' ? (mode = 'grid') : (mode = 'card');
+  //   setTimeout(() => {
+  //     mode = 'grid';
+  //   }, 20000);
+  // }
+
   async function toggle() {
-    await getCard();
+    DeckStore.getCard();
     mode === 'card' ? (mode = 'grid') : (mode = 'card');
     setTimeout(() => {
       mode = 'grid';
     }, 20000);
   }
 
-  function shuffleDeck() {
-    deck.cards.sort(() => Math.random() - 0.5);
-  }
+  // function shuffleDeck() {
+  //   deck.cards.sort(() => Math.random() - 0.5);
+  // }
 
-  function getCard() {
-    deck.cards[deck.cardNumber].viewed = true;
-    // viewedCardCount = deck.cardNumber;
-    if (deck.cardNumber > deck.cards.length) {
-      shuffleDeck();
-      deck.cardNumber = 0;
-    } else {
-      deck.cardNumber = ++deck.cardNumber;
-    }
-    buildCardHtml().then(() => {
-      saveDeck();
-    });
-  }
+  // function getCard() {
+  //   deck.cards[deck.cardNumber].viewed = true;
+  //   // viewedCardCount = deck.cardNumber;
+  //   if (deck.cardNumber > deck.cards.length) {
+  //     shuffleDeck();
+  //     deck.cardNumber = 0;
+  //   } else {
+  //     deck.cardNumber = ++deck.cardNumber;
+  //   }
+  //   buildCardHtml().then(() => {
+  //     saveDeck();
+  //   });
+  // }
 
-  async function buildCardHtml() {
-    card.text1 = '';
-    card.text2 = '';
+  // async function buildCardHtml() {
+  //   card.text1 = '';
+  //   card.text2 = '';
 
-    deck.cards[deck.cardNumber].content.forEach((item) => {
-      if (item.line === 1) {
-        card.text1 += `<span style="color: ${item.color}">${item.text}</span>`;
-      }
-      if (item.line === 2) {
-        card.text2 += `<span style="color: ${item.color}">${item.text}</span>`;
-      }
-    });
-  }
+  //   deck.cards[deck.cardNumber].content.forEach((item) => {
+  //     if (item.line === 1) {
+  //       card.text1 += `<span style="color: ${item.color}">${item.text}</span>`;
+  //     }
+  //     if (item.line === 2) {
+  //       card.text2 += `<span style="color: ${item.color}">${item.text}</span>`;
+  //     }
+  //   });
+  // }
 
-  function saveDeck() {
-    window.localStorage.setItem('noba-deck', JSON.stringify(deck));
-  }
+  // function saveDeck() {
+  //   window.localStorage.setItem('noba-deck', JSON.stringify(deck));
+  // }
 
   onMount(async () => {
-    if (window.localStorage.getItem('noba-deck')) {
-      deck = await JSON.parse(window.localStorage.getItem('noba-deck'));
-    } else {
-      var d = await import('../../static/deck.json');
-      deck = JSON.parse(JSON.stringify(d));
-      shuffleDeck();
-      saveDeck();
-    }
-    console.log(deck.cardNumber);
-    console.log('deck.cardNumber: ' + deck.cardNumber);
-    viewedCardCount = deck.cardNumber;
+    DeckStore.getDeck();
+
+    console.log(DeckStore.deck.cardNumber);
+    console.log('deck.cardNumber: ' + DeckStore.deck.cardNumber);
+    viewedCardCount = DeckStore.deck.cardNumber;
   });
+
+  // onMount(async () => {
+  //   if (window.localStorage.getItem('noba-deck')) {
+  //     deck = await JSON.parse(window.localStorage.getItem('noba-deck'));
+  //   } else {
+  //     var d = await import('../../static/deck.json');
+  //     deck = JSON.parse(JSON.stringify(d));
+  //     shuffleDeck();
+  //     saveDeck();
+  //   }
+  //   console.log(deck.cardNumber);
+  //   console.log('deck.cardNumber: ' + deck.cardNumber);
+  //   viewedCardCount = deck.cardNumber;
+  // });
 </script>
 
 <div class="main-container" style="height: {availHeight}px">
@@ -89,12 +106,7 @@
   {/if}
   {#if mode === 'grid'}
     <div class="item grid" transition:fade={{ duration: 1000 }}>
-      <Grid
-        on:gridUp={toggle}
-        worldHeight={availHeight}
-        worldWidth={availWidth}
-        viewedCards={viewedCardCount}
-      />
+      <Grid on:gridUp={toggle} worldHeight={availHeight} worldWidth={availWidth} viewedCards={0} />
     </div>
   {/if}
 
