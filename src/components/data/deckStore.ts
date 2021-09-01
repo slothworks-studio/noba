@@ -49,7 +49,7 @@ async function getDeck(): Promise<Deck> {
     if (window.localStorage.getItem('noba-deck')) {
       return await JSON.parse(window.localStorage.getItem('noba-deck'));
     } else {
-      let d: Deck = await import('../../static/deck.json');
+      let d: Deck = await import('../../../static/deck.json');
       d = JSON.parse(JSON.stringify(d));
       if (d.default) {
         delete d.default;

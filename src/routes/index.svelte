@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { Card as CardType } from 'src/data/types';
+  import type { Card as CardType } from 'src/components/data/types';
   import { beforeUpdate, onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import Card from '../components/Card.svelte';
   import Grid from '../components/Grid.svelte';
   import Splash from '../components/Splash.svelte';
   import Instructions from '../components/Instructions.svelte';
-  import { DeckStore } from '../data/deckStore';
+  import { DeckStore } from '../components/data/deckStore';
   // let deck: Deck;
   let card: CardType = {
     text1: '',
