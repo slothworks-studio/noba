@@ -1,18 +1,20 @@
 <script lang="ts">
-  import type { Card as CardType, Deck } from 'src/data/types';
+  import type { Card as CardType } from 'src/data/types';
   import { beforeUpdate, onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import Card from '../components/Card.svelte';
   import Grid from '../components/Grid.svelte';
   import Splash from '../components/Splash.svelte';
-  let deck: Deck;
+  import Instructions from '../components/Instructions.svelte';
+  import { DeckStore } from '../data/deckStore';
+  // let deck: Deck;
   let card: CardType = {
     text1: '',
     text2: '',
   };
-  $: viewedCardCount = 0;
+  // $: viewedCardCount = 0;
 
-  let mode: 'grid' | 'card' | 'onboarding' = 'grid';
+  $: mode = $DeckStore.settings.mode;
   let availWidth = 1;
   let availHeight = 1;
 
@@ -23,36 +25,23 @@
   });
 
   async function toggle() {
-    await getCard();
+    DeckStore.getNextCard();
+    await buildCardHtml();
     mode === 'card' ? (mode = 'grid') : (mode = 'card');
     setTimeout(() => {
       mode = 'grid';
     }, 20000);
   }
 
-  function shuffleDeck() {
-    deck.cards.sort(() => Math.random() - 0.5);
-  }
-
-  function getCard() {
-    deck.cards[deck.cardNumber].viewed = true;
-    // viewedCardCount = deck.cardNumber;
-    if (deck.cardNumber > deck.cards.length) {
-      shuffleDeck();
-      deck.cardNumber = 0;
-    } else {
-      deck.cardNumber = ++deck.cardNumber;
-    }
-    buildCardHtml().then(() => {
-      saveDeck();
-    });
+  function onboarded() {
+    DeckStore.onBoardingComplete();
   }
 
   async function buildCardHtml() {
     card.text1 = '';
     card.text2 = '';
 
-    deck.cards[deck.cardNumber].content.forEach((item) => {
+    $DeckStore.cards[$DeckStore.currentCard].content.forEach((item) => {
       if (item.line === 1) {
         card.text1 += `<span style="color: ${item.color}">${item.text}</span>`;
       }
@@ -62,29 +51,19 @@
     });
   }
 
-  function saveDeck() {
-    window.localStorage.setItem('noba-deck', JSON.stringify(deck));
-  }
-
   onMount(async () => {
-    if (window.localStorage.getItem('noba-deck')) {
-      deck = await JSON.parse(window.localStorage.getItem('noba-deck'));
-    } else {
-      var d = await import('../../static/deck.json');
-      deck = JSON.parse(JSON.stringify(d));
-      shuffleDeck();
-      saveDeck();
-    }
-    console.log(deck.cardNumber);
-    console.log('deck.cardNumber: ' + deck.cardNumber);
-    viewedCardCount = deck.cardNumber;
+    DeckStore.init();
   });
 </script>
 
 <div class="main-container" style="height: {availHeight}px">
-  {#if mode === 'onboarding'}
-    <div class="grid" transition:fade={{ duration: 55000 }}>
+  {#if mode === 'initializing'}
+    <div class="item grid" transition:fade={{ duration: 10000 }}>
       <Splash />
+    </div>{/if}
+  {#if mode === 'onboarding'}
+    <div class="grid" transition:fade={{ duration: 10000 }}>
+      <Instructions on:instructionsUp={onboarded} />
     </div>
   {/if}
   {#if mode === 'grid'}
@@ -93,17 +72,14 @@
         on:gridUp={toggle}
         worldHeight={availHeight}
         worldWidth={availWidth}
-        viewedCards={viewedCardCount}
+        viewedCards={$DeckStore.currentCard}
+        cardCount={$DeckStore.cards.length}
       />
     </div>
   {/if}
 
   {#if mode === 'card'}
     <div class="item z-30 grid" transition:fade={{ delay: 0, duration: 10000 }}>
-      <!-- <Card
-        text1={deck.cards[deck.cardNumber].content[0].text}
-        text2={deck.cards[deck.cardNumber].content[1].text}
-      /> -->
       <Card text1={card.text1} text2={card.text2} />
     </div>
   {/if}

@@ -1,8 +1,9 @@
 {
   "settings": {
-    "onboarded": false
+    "onboarded": false,
+    "isPersisted": false
   },
-  "cardNumber": 0,
+  "currentCard": 0,
   "cards": [
     {
       "content": [

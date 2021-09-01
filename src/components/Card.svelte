@@ -29,5 +29,7 @@
     justify-content: center;
     justify-items: center;
     padding: 25px;
+    cursor: none;
+    user-select: none;
   }
 </style>
