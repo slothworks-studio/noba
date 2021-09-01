@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
 
   import '../app.css';
-
   onMount(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js').catch(function (err) {

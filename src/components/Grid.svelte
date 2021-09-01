@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { onMount, createEventDispatcher } from 'svelte';
   import pkg from 'matter-js';
-  import { debug } from 'svelte/internal';
+  import { createEventDispatcher, onMount } from 'svelte';
+
   const {
     Render,
     Runner,
@@ -17,12 +17,14 @@
 
   export let id = 'grid';
   export let viewedCards = 0;
+  export let cardCount = 0;
   export let worldWidth = 1000;
   export let worldHeight = 1000;
   export let columns = 25;
   export let rows = 25;
 
   let colors = [];
+  let currentCard = 0;
   const dispatch = createEventDispatcher();
 
   onMount(async () => {
@@ -111,10 +113,7 @@
     }
 
     function createGrid() {
-      console.log('create grid ');
-      console.log('viewed cards: ' + viewedCards);
       setCardColors().then(() => {
-        // console.log(colors);
         //worldwidth / columns = initial grid bucket width
         //worldheight / rows = initial grid bucket heighth
 
@@ -131,11 +130,8 @@
             let y = rowHeight / 2 + rowHeight * i;
             let x = columnWidth / 2 + columnWidth * j;
 
-            // calculate color
-
-            // decrement card counts
-
-            createCard(x, y, cardWidth, cardHeight, 'row' + i + ';column' + j, colors[i]);
+            createCard(x, y, cardWidth, cardHeight, 'row' + i + ';column' + j, colors[currentCard]);
+            currentCard++;
           }
         }
       });
@@ -143,22 +139,20 @@
 
     async function setCardColors() {
       let totalCards = columns * rows;
-      console.log(totalCards);
-      console.log('viewed cards: ' + viewedCards);
-
+      let percentViewed = Math.round((viewedCards / cardCount) * 100);
+      console.log('percent viewed: ' + percentViewed);
       // Initialize array
       for (let i = 0; i < totalCards; i++) {
         colors[i] = 'black';
       }
 
-      for (let i = 0; i < viewedCards; i++) {
+      for (let i = 0; i < percentViewed; i++) {
         let x = Math.floor(Math.random() * totalCards + 1);
-        console.log(x);
+
         if (colors[x] != '#cc1b21') {
           colors[x] = '#cc1b21';
         } else i--; // run it again;
       }
-      // console.log('colors: ' + colors);
     }
 
     Events.on(engine, 'collisionStart', (event) => {

@@ -1,6 +1,7 @@
 {
   "settings": {
-    "onboarded": false
+    "onboarded": false,
+    "isPersisted": false
   },
   "currentCard": 0,
   "cards": [

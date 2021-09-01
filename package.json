@@ -41,9 +41,10 @@
     "vite": "^2.2.3"
   },
   "type": "module",
+  "module": "esnext",
   "dependencies": {
-    "immer": "^9.0.5",
     "matter-js": "^0.17.1",
-    "planck": "^1.0.0-alpha.2"
+    "planck": "^1.0.0-alpha.2",
+    "shake.js": "^1.2.2"
   }
 }

@@ -1,5 +1,10 @@
 export type Deck = {
-  settings: object;
+  default: any;
+  settings: {
+    onboarded: boolean;
+    isPersisted: boolean;
+    mode: 'grid' | 'card' | 'onboarding' | 'initializing';
+  };
   /**
    * cardNumber refers to the current card in the array. Can also be used
    * to tell the total cards viewed.
