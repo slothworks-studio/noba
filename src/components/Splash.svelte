@@ -24,5 +24,7 @@
     flex-direction: column;
     justify-items: center;
     justify-content: center;
+    cursor: none;
+    user-select: none;
   }
 </style>
