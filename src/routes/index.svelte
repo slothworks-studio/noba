@@ -92,7 +92,6 @@
     height: 100%;
     display: grid;
     font-size: 2rem;
-    @apply font-mono;
     overflow: hidden;
   }
 

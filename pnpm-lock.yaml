@@ -14,7 +14,6 @@ specifiers:
   eslint-plugin-svelte3: ^3.2.0
   jest: ^26.6.3
   matter-js: ^0.17.1
-  planck: ^1.0.0-alpha.2
   postcss: ^8.2.13
   postcss-load-config: ^3.0.1
   postcss-preset-env: ^6.7.0
@@ -33,12 +32,11 @@ specifiers:
 
 dependencies:
   matter-js: 0.17.1
-  planck: 1.0.0-alpha.2
   shake.js: 1.2.2
 
 devDependencies:
   '@sveltejs/adapter-netlify': 1.0.0-next.12_svelte@3.38.2
-  '@sveltejs/kit': 1.0.0-next.161_svelte@3.38.2
+  '@sveltejs/kit': 1.0.0-next.162_svelte@3.38.2
   '@tailwindcss/jit': 0.1.18_postcss@8.2.13+tailwindcss@2.1.2
   '@types/jest': 26.0.23
   '@types/matter-js': 0.14.12
@@ -693,14 +691,14 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.161_svelte@3.38.2:
-    resolution: {integrity: sha512-19yrQjfskZXh5TboZI0HGAO8lq5H+JUw/JHnZZ85IGnetqJWr/sYxDmOkXAK9b97UDYAVZ/jy3Ztx5J8Nj4fkQ==}
+  /@sveltejs/kit/1.0.0-next.162_svelte@3.38.2:
+    resolution: {integrity: sha512-fLJNGXeTFtwy1p91mWh+Sr+wgi0vEPgXN0uIUvofzQSNp7MDwxw2noDCogyHgxHhU3uDf2+Osz3aJC2fCsbIbw==}
     engines: {node: ^12.20 || >=14.13}
     hasBin: true
     peerDependencies:
       svelte: ^3.39.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.20_svelte@3.38.2+vite@2.5.3
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.21_svelte@3.38.2+vite@2.5.3
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.38.2
@@ -732,8 +730,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.20_svelte@3.38.2+vite@2.5.3:
-    resolution: {integrity: sha512-7IbHNr5okZqYVL7WGStNatL8IzpqMLbgKvLY9uobMBQrzVhlc/9qsQwvWn8uLBndZ9kB8Wr+m4/XEiUoeBLijg==}
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.21_svelte@3.38.2+vite@2.5.3:
+    resolution: {integrity: sha512-JjPnoQoI1+VXHjguE1bWyFYdZvPN6VTZ5RsFRpju45zICas1N5jAuOqKTbhQ1G+eEMCbhhB6zjZgQQRtaXPhNQ==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       diff-match-patch: ^1.0.5
@@ -3955,12 +3953,6 @@ packages:
       find-up: 4.1.0
     dev: true
 
-  /planck/1.0.0-alpha.2:
-    resolution: {integrity: sha512-rJegXAJEEsYwNyxHMJjtq5OPAU4SZm8eZ5eYhiM6J7B0O1IzLFFTnRxKfaecyVcpkJqW/u2s2va4bnJ64jK89w==}
-    dependencies:
-      stage-js: 0.9.4
-    dev: false
-
   /posix-character-classes/0.1.1:
     resolution: {integrity: sha1-AerA/jta9xoqbAL+q7jB/vfgDqs=}
     engines: {node: '>=0.10.0'}
@@ -4922,10 +4914,6 @@ packages:
     dependencies:
       escape-string-regexp: 2.0.0
     dev: true
-
-  /stage-js/0.9.4:
-    resolution: {integrity: sha512-fNN6rkYD55T4NUxJE71hixXYS9DoyHVX5S8sQcq5yiozX1kqHP/wnByZwFfdAGNZjb5rROJ90zwb0EbM9U2Jqg==}
-    dev: false
 
   /static-extend/0.1.2:
     resolution: {integrity: sha1-YICcOcv/VTNyJv1eC1IPNB8ftcY=}

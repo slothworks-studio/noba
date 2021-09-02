@@ -8,9 +8,7 @@
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "lint": "prettier --check . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write .",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@sveltejs/adapter-netlify": "^1.0.0-next.12",
@@ -44,7 +42,6 @@
   "module": "esnext",
   "dependencies": {
     "matter-js": "^0.17.1",
-    "planck": "^1.0.0-alpha.2",
     "shake.js": "^1.2.2"
   }
 }
